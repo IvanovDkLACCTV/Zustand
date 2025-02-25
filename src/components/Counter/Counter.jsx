@@ -1,4 +1,5 @@
-import useStore from "../hooks/store"
+import useStore from "../../hooks/store"
+import "./Counter.css"
 
 function BearCounter() {
   const bears = useStore((state) => state.bears)

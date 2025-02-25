@@ -1,16 +1,23 @@
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
 import "./App.css"
-import { BearCounter, Controls } from "./components/Zustand"
+import BearCounterFunction from "./pages/BearCounter/BearCounter"
 
 function App() {
   console.log("Hello from Zustand")
   return (
-    <>
-      <div>
-        <h1>Bears</h1>
-        <BearCounter />
-        <Controls />
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Link to="/BearCounter">
+              <button>Bear Counter</button>
+            </Link>
+          }
+        />
+        <Route path="/BearCounter" element={<BearCounterFunction />} />
+      </Routes>
+    </Router>
   )
 }
 
