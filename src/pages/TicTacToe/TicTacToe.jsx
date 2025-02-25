@@ -1,19 +1,17 @@
 import { Link } from "react-router-dom"
-import { BearCounter, Controls } from "../../components/Counter/Counter"
-import "./BearCounter.css"
+import Board from "../../components/Game/Board"
 
-export default function BearCounterFunction() {
+export default function TicTacToe() {
   const text = "<- Back to the Future ↯↯"
   return (
     <div>
-      <h1>Bears</h1>
-      <BearCounter />
-      <Controls />
+      <h1>Tic Tac Toe</h1>
       <Link className="home-button" to="/">
         <button>
           <p>{text}</p>
         </button>
       </Link>
+      <Board />
     </div>
   )
 }

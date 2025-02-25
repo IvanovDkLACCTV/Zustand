@@ -1,4 +1,4 @@
-import useStore from "../../hooks/store"
+import useStore from "../../hooks/useCounterStore"
 import "./Counter.css"
 
 function BearCounter() {
