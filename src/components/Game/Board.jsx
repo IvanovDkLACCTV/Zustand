@@ -1,13 +1,9 @@
 import "./Game.css"
 import Square from "./Square"
-import { useGameStore } from "../../hooks/useGameStore"
 import { calculateStatus, calculateTurns, calculateWinner } from "./Logic"
+import PropTypes from "prop-types"
 
-export default function Board() {
-  const xIsNext = useGameStore((state) => state.xIsNext)
-  const setXIsNext = useGameStore((state) => state.setXIsNext)
-  const squares = useGameStore((state) => state.squares)
-  const setSquares = useGameStore((state) => state.setSquares)
+export default function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares)
   const turns = calculateTurns(squares)
   const player = xIsNext ? "X" : "O"
@@ -17,12 +13,18 @@ export default function Board() {
     if (squares[i] || winner) return
     const nextSquares = squares.slice()
     nextSquares[i] = player
-    setSquares(nextSquares)
-    setXIsNext(!xIsNext)
+    onPlay(nextSquares)
+  }
+
+  // Add PropTypes for the component
+  Board.propTypes = {
+    xIsNext: PropTypes.bool.isRequired,
+    squares: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onPlay: PropTypes.func.isRequired,
   }
 
   return (
-    <>
+    <div>
       <div className="status">{status}</div>
       <div className="board">
         {squares.map((square, squareIndex) => (
@@ -33,6 +35,6 @@ export default function Board() {
           />
         ))}
       </div>
-    </>
+    </div>
   )
 }
