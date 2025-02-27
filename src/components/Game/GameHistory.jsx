@@ -26,6 +26,7 @@ export default function Game() {
     <div className="game-wrapper">
       <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       <div className="game-history">
+        <h2>Game History</h2>
         <ol>
           {history.map((_, historyIndex) => {
             const description =

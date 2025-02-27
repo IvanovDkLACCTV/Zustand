@@ -17,8 +17,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  width: calc(9 * 3rem);
-  height: calc(9 * 3rem);
+  width: calc(10 * 3rem);
+  height: calc(10 * 3rem);
   border: 1px solid #999;
   border-radius: 5px;
   background-color: #213547;
@@ -34,8 +34,14 @@
   margin: 0.5rem;
   color: #213547;
   font-weight: bold;
-  font-size: 0.9rem;
   font-family: "Courier New", Courier, monospace;
+}
+.game-history ol li {
+  font-size: 0.8rem;
+}
+.game-history h2 {
+  margin-top: -0.1rem;
+  margin-bottom: 2rem;
 }
 .game-wrapper {
   display: flex;
