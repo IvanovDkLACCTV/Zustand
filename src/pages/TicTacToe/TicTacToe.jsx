@@ -6,12 +6,12 @@ export default function TicTacToe() {
   return (
     <div>
       <h1>Tic Tac Toe</h1>
+      <Board />
       <Link className="home-button" to="/">
         <button>
           <p>{text}</p>
         </button>
       </Link>
-      <Board />
     </div>
   )
 }

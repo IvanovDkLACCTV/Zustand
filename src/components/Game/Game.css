@@ -3,19 +3,30 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  background-color: #fff;
+  background-color: #f9f9f9;
   border: 1px solid #999;
   outline: 0;
-  border-radius: 0;
-  font-size: 1rem;
+  border-radius: 5;
+  font-size: 2rem;
   font-weight: bold;
+  cursor: pointer;
+  color: #213547;
 }
 
 .board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  width: calc(3 * 2.5rem);
-  height: calc(3 * 2.5rem);
+  width: calc(8 * 3rem);
+  height: calc(8 * 3rem);
   border: 1px solid #999;
+  border-radius: 5px;
+  background-color: #213547;
+  margin: 1.25rem;
+}
+.status {
+  margin: 0.5rem;
+  color: #cf1414;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
