@@ -1,6 +1,6 @@
 import "./Game.css"
 import Square from "./Square"
-import useGameStore from "../../hooks/useGameStore"
+import { useGameStore } from "../../hooks/useGameStore"
 
 export default function Board() {
   const xIsNext = useGameStore((state) => state.xIsNext)
