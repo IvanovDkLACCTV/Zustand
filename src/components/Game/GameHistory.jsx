@@ -5,21 +5,19 @@ import Board from "./Board"
 export default function Game() {
   const history = useGameStore((state) => state.history)
   const setHistory = useGameStore((state) => state.setHistory)
-  const xIsNext = useGameStore((state) => state.xIsNext)
-  const setXIsNext = useGameStore((state) => state.setXIsNext)
-  const currentSquares = history[history.length - 1]
-
   const currentMove = useGameStore((state) => state.currentMove)
   const setCurrentMove = useGameStore((state) => state.setCurrentMove)
+  const xIsNext = currentMove % 2 === 0
+  const currentSquares = history[currentMove]
 
   function handlePlay(nextSquares) {
-    setHistory(history.concat([nextSquares]))
-    setXIsNext(!xIsNext)
+    const nextHistory = history.slice(0, currentMove + 1).concat([nextSquares])
+    setHistory(nextHistory)
+    setCurrentMove(nextHistory.length - 1)
   }
 
   function jumpTo(nextMove) {
     setCurrentMove(nextMove)
-    setXIsNext(currentMove % 2 === 0)
   }
 
   return (
